@@ -8,6 +8,7 @@ export const register = async (req: Request, res: Response) => {
   const userRepo = AppDataSource.getRepository(UserInfo);
   const { name, email, password } = req.body;
 
+  
   if (!name || !email || !password) {
     return res.status(500).json({
       message: "something wrong",

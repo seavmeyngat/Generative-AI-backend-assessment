@@ -9,6 +9,7 @@ const protectRoute = (roles: RoleType[] = [RoleEnum[2]]) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
 
+
     // Check if Authorization header exists and starts with "Bearer"
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return res.status(401).json({
